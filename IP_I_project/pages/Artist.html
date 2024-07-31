@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <title>Artists Page</title>
+    <link rel="stylesheet" href="../styles/artists.css">
+</head>
+
+<body>
+    <header>
+        <h1>Artists</h1>
+        <p>Explore the talented artists in our community</p>
+    </header>
+
+    <main>
+        <section id="artists-container">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showArtists() {
+            var products = JSON.parse(localStorage.getItem('products')) || [];
+            var artistsSet = new Set();
+
+            for (var i = 0; i < products.length; i++) {
+                var product = products[i];
+                artistsSet.add(product.name);
+            }
+
+            var artistsContainer = document.getElementById('artists-container');
+
+            var artistsArray = Array.from(artistsSet);
+            for (var j = 0; j < artistsArray.length; j++) {
+                var artistElement = document.createElement('div');
+                artistElement.className = 'artist';
+                artistElement.textContent = artistsArray[j];
+                artistsContainer.appendChild(artistElement);
+            }
+        }
+
+        showArtists();
+    </script>
+</body>
+
+</html>

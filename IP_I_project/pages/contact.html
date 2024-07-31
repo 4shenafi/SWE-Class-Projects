@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="path/to/ionicons/css/ionicons.min.css">
+    <link rel="icon" href="../images/logo.png" type="image/png" />
+    <title>ምስል Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles/contact.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    
+    <script>
+        
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="panel-all">
+                <a href="#" class="back-link">
+                    <a href="../pages/home.html"><i class="fa fa-arrow-left"></i></a>
+                </a>
+            </div>
+            <div class="logo">
+                <img src="../images/logo.png" alt="Logo">
+                <h1>ምስል Market</h1>
+            </div>
+            <div class="nav-search">
+                <input placeholder="Search in ምስል Market " class="search-input">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="nav-cart border">
+                <a href="../pages/sell.html"><i class='fas fa-plus' style='font-size:36px'></i></a>
+            </div>
+            <div class="nav-signin border">
+                <i class='fas fa-user-alt' style='font-size:36px'></i>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-options">
+                <a href="../pages/home.html"><p>Home</p></a>  
+                <a href=""><p>Artists</p></a>   
+                <a href="../pages/about.html"><p>About</p></a>
+                <a href="../pages/contact.html"><p>Contact us</p></a>
+            </div>
+            <div class="panel-deals">
+                Sell and Buy in ምስል Market
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form" onsubmit="submitForm(event)">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" onclick="window.alert('Succesfully Sent!')">Send</button>
+            
+        </form>
+    </div>
+    </body>
+</html>

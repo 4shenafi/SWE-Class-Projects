@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../images/logo.png" type="image/png" />
+  <title>Digital Art Gallery</title>
+  <link rel="stylesheet" href="../styles/Digital_Art.css">
+</head>
+<body>
+
+  <header>
+    <h1>Art Gallery</h1>
+    <p>Welcome to our Digital Art Collection</p>
+  </header>
+
+  <main>
+    <section id="digital-artworks-container">
+    
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Art Gallery. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    function showDigitalArtworks() {
+        var products = JSON.parse(localStorage.getItem('products')) || [];
+
+        var digitalArtworksContainer = document.getElementById('digital-artworks-container');
+
+        for (var i = 0; i < products.length; i++) {
+            var product = products[i];
+            var productElement = document.createElement('div');
+
+            if (product.category === 'Digital_Art') {
+                productElement.className = 'digital-artwork';
+                productElement.innerHTML = `
+                    <img src="${product.picture}" alt="${product.description}">
+                    <p>Price:${product.price} ETB</p>
+                    <button onclick="showDetails(${i})">See more</button>
+                    <div id="details${i}"></div>
+                `;
+                digitalArtworksContainer.appendChild(productElement);
+            }
+        }
+    }
+
+    showDigitalArtworks();
+
+    function showDetails(index) {
+        var products = JSON.parse(localStorage.getItem('products')) || [];
+
+        var product = products[index];
+        var detailsContainer = document.getElementById(`details${index}`);
+        detailsContainer.innerHTML = `
+            <p>Artist: ${product.name}</p>
+            <p>Email: ${product.email}</p>
+            <p>Phone: ${product.phone}</p>
+            <p>Location: ${product.location}</p>
+            <p>Description: ${product.description}</p>
+            <p>Price: ${product.price} ETB</p>
+            <p>Social Media: ${product.socialMedia}</p>
+        `;
+    }
+</script>
+</body>
+</html>
